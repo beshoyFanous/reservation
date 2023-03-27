@@ -1,0 +1,23 @@
+<div class="h-100">
+    <ng-container *ngFor="let item of settings">
+      <div class="h-100" style="background-image: url('{{ item.imageUrl }}'); opacity: 0.3;">
+        <div class="row mx-0 mt-4 conference-info">
+          <div *ngIf="item.generalAlerts" class="col-md-4 col-12 px-md-3 px-0">
+            <div class="text-center font-weight-bold">{{'settings.generalAlerts' | translate}}</div>
+            <div [innerHTML]="item.generalAlerts"></div>
+          </div>
+          <div *ngIf="item.priceDetails" class="col-md-4 col-12 px-md-3 px-0">
+            <div class="text-center font-weight-bold">{{'settings.priceDetails' | translate}}</div>
+            <div [innerHTML]="item.priceDetails"></div>
+          </div>
+          <div *ngIf="item.importantDates" class="col-md-4 col-12 px-md-3 px-0">
+            <div class="text-center font-weight-bold">{{'settings.importantDates' | translate}}</div>
+            <div  [innerHTML]="item.importantDates"></div>
+          </div>
+        </div>
+       </div>
+      </ng-container>
+    <div class="d-flex justify-content-center">
+        <button mat-flat-button color="primary" type="button" (click)="showTicketForm()">{{'settings.agreeTerms' | translate}}</button>
+    </div>
+</div>
